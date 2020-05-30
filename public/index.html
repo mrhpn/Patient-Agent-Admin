@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Patient Agent | Admin</title>
-    <link rel="stylesheet" href="/build/tailwind.css" />
-    <!-- <style>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patient Agent | Admin</title>
+  <link rel="icon" href="/img/logo.svg">
+  <link rel="stylesheet" href="/build/tailwind.css" />
+  <!-- <style>
       @font-face {
         font-family: 'font-product-san';
         src: url('/fonts/Product-Sans-Regular.ttf');
@@ -14,32 +16,38 @@
         font-family: font-product-san;
       }
     </style> -->
-  </head>
-  <body class="bg-gray-200">
-    <div class="w-full mx-auto p-5 sm:p-10 bg-indigo-500">
+</head>
+
+<body class="bg-gray-200">
+  <div class="w-full bg-indigo-500">
+    <div class="container mx-auto p-5 sm:p-10">
+
       <!-- header -->
-      <div class="flex align-middle py-5 sm:py-0">
+      <div class="flex align-middle py-5 sm:py-0 relative">
+        <!-- logo -->
         <div class="flex-grow flex flex-row items-center p-0">
-          <img class="w-12 sm:w-20 inline" src="/img/logo.svg" alt="Leaf logo">
+          <img class="w-12 sm:w-16 inline" src="/img/logo.svg" alt="Leaf logo">
           <div class="flex flex-col">
             <h1 class="text-base font-bold text-white uppercase tracking-wider">
-              Administrator</span>
+              Administrator
             </h1>
-            <hr class="w-16 hidden sm:inline" />
-            <h3 class="text-lg text-gray-200">Patient Booking System</h3>
-        </div>
-        </div>
-        <div class="w-10 h-10 mb-4 relative">
-          <div class="group w-full h-full rounded-full overflow-hidden shadow-inner text-center bg-purple table cursor-pointer">
-            <span class="hidden group-hover:table-cell text-white font-bold align-middle">KR</span>
-            <img
-              src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
-              alt="lovely avatar"
-              class="object-cover object-center w-full h-full visible group-hover:hidden"
-            />
+            <hr class="w-auto hidden sm:inline" />
+            <h3 class="text-sm italic text-gray-300">Patient Booking System</h3>
           </div>
         </div>
-        <div class="flex flex-col right-0 mt-12 mr-5 sm:mr-10 bg-white p-2 rounded-lg absolute z-50 shadow-md">
+        <!-- end logo -->
+
+        <!-- avatar -->
+        <div class="w-10 h-10 mb-4">
+          <div class="group w-full h-full rounded-full overflow-hidden shadow-inner text-center bg-purple table cursor-pointer">
+            <span class="hidden group-hover:table-cell text-white font-bold align-middle">KR</span>
+            <img src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png" alt="lovely avatar" class="object-cover object-center w-full h-full visible group-hover:hidden" />
+          </div>
+        </div>
+        <!-- end avatar -->
+
+        <!-- account & logout -->
+        <div class="right-0 mt-12 bg-white p-2 rounded-lg absolute z-50 shadow-md">
           <div class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded-lg">
             <ion-icon name="person-outline" size="small" class="align-middle"></ion-icon>
             <span class="px-3 align-middle text-xs">Account</span>
@@ -49,6 +57,7 @@
             <span class="px-3 align-middle text-xs"> Logout</span>
           </div>
         </div>
+        <!-- end account & logout -->
       </div>
       <!-- end header -->
 
@@ -63,7 +72,7 @@
               <option>Phone</option>
             </select>
             <input class="w-full sm:w-auto mb-3 sm:mb-0 p-2 mr-3 border rounded-lg bg-gray-200" type="text" name="search" id="search" placeholder="Search...">
-            <button class="w-full sm:w-auto bg-indigo-500 bottom-0 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg">
+            <button class="w-full sm:w-auto bg-indigo-500 bottom-0 hover:bg-blue-700 text-white py-2 px-4 rounded-lg">
               <ion-icon name="search-outline" class="align-text-top" size="small"></ion-icon> Search
             </button>
           </div>
@@ -72,37 +81,37 @@
 
         <!-- filter -->
         <div class="bg-white mt-3 sm:mt-0 rounded-lg px-4 py-5 shadow-sm relative sm:ml-3">
-          <button class="w-full bg-indigo-500 bottom-0 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg">
+          <button class="w-full bg-indigo-500 bottom-0 hover:bg-blue-700 text-white py-2 px-4 rounded-lg">
             <ion-icon name="filter-outline" class="align-text-top" size="small"></ion-icon> Filter/Sort
           </button>
 
           <div class="bg-white w-full rounded-lg shadow-md z-50 right-0 mt-8 absolute">
             <div class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700">
               <input class="pl-5 inline-block cursor-pointer" type="radio" name="filter" id="this-week" checked="checked">
-              <label for="this-week" class="ml-2 text-gray-800">This Week</label>
+              <label for="this-week" class="ml-2 text-gray-800 text-sm">This Week</label>
             </div>
             <div class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700">
               <input class="pl-5 inline-block cursor-pointer" type="radio" name="filter" id="this-month">
-              <label for="this-month" class="ml-2 text-gray-800">This Month</label>
+              <label for="this-month" class="ml-2 text-gray-800 text-sm">This Month</label>
             </div>
             <hr>
             <div class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700">
               <input class="pl-5 inline-block cursor-pointer" type="radio" name="sort" id="date-asc" checked="checked">
-              <label for="date-asc" class="ml-2 text-gray-800">Last Registered</label>
+              <label for="date-asc" class="ml-2 text-gray-800 text-sm">Last Registered</label>
             </div>
             <div class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700">
               <input class="pl-5 inline-block cursor-pointer" type="radio" name="sort" id="date-desc">
-              <label for="date-desc" class="ml-2 text-gray-800">First Registered</label>
+              <label for="date-desc" class="ml-2 text-gray-800 text-sm">First Registered</label>
             </div>
           </div>
         </div>
         <!-- end filter -->
       </div>
       <!-- end search & filter -->
-
-
     </div>
+  </div>
 
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-  </body>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+</body>
+
 </html>
