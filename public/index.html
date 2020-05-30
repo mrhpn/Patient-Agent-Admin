@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Agent | Admin</title>
+    <link rel="stylesheet" href="/build/tailwind.css" />
+  </head>
+  <body class="bg-gray-200">
+    <div class="w-full mx-auto p-5 sm:p-10 bg-indigo-500">
+      <!-- header -->
+      <div class="flex align-middle">
+        <div class="flex-grow flex flex-row items-center p-0">
+          <img class="w-12 sm:w-20 inline" src="/img/logo.svg" alt="Leaf logo">
+          <div class="flex flex-col">
+            <h1 class="text-base font-bold text-white uppercase tracking-wide">
+              Administrator</span>
+            </h1>
+            <hr class="w-16 hidden sm:inline" />
+            <h3 class="text-xl text-gray-300 italic hidden sm:inline">Patient Booking System</h3>
+        </div>
+        </div>
+        <div class="w-10 h-10 mb-4 relative">
+          <div class="group w-full h-full rounded-full overflow-hidden shadow-inner text-center bg-purple table cursor-pointer">
+            <span class="hidden group-hover:table-cell text-white font-bold align-middle">KR</span>
+            <img
+              src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
+              alt="lovely avatar"
+              class="object-cover object-center w-full h-full visible group-hover:hidden"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col right-0 mt-12 mr-5 sm:mr-10 bg-white p-2 rounded-lg absolute z-50 shadow-sm">
+          <div class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded-lg">
+            <ion-icon name="person-outline" size="small" class="align-middle"></ion-icon>
+            <span class="px-3 align-middle text-xs">Account</span>
+          </div>
+          <div class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded-lg">
+            <ion-icon name="log-out-outline" size="small" class="align-middle"></ion-icon>
+            <span class="px-3 align-middle text-xs"> Logout</span>
+          </div>
+        </div>
+      </div>
+      <!-- end header -->
+    </div>
+
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  </body>
+</html>
