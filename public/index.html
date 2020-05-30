@@ -5,19 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Patient Agent | Admin</title>
     <link rel="stylesheet" href="/build/tailwind.css" />
+    <!-- <style>
+      @font-face {
+        font-family: 'font-product-san';
+        src: url('/fonts/Product-Sans-Regular.ttf');
+      }
+      html,body {
+        font-family: font-product-san;
+      }
+    </style> -->
   </head>
   <body class="bg-gray-200">
     <div class="w-full mx-auto p-5 sm:p-10 bg-indigo-500">
       <!-- header -->
-      <div class="flex align-middle">
+      <div class="flex align-middle py-5 sm:py-0">
         <div class="flex-grow flex flex-row items-center p-0">
           <img class="w-12 sm:w-20 inline" src="/img/logo.svg" alt="Leaf logo">
           <div class="flex flex-col">
-            <h1 class="text-base font-bold text-white uppercase tracking-wide">
+            <h1 class="text-base font-bold text-white uppercase tracking-wider">
               Administrator</span>
             </h1>
             <hr class="w-16 hidden sm:inline" />
-            <h3 class="text-xl text-gray-300 italic hidden sm:inline">Patient Booking System</h3>
+            <h3 class="text-lg text-gray-200">Patient Booking System</h3>
         </div>
         </div>
         <div class="w-10 h-10 mb-4 relative">
@@ -30,7 +39,7 @@
             />
           </div>
         </div>
-        <div class="flex flex-col right-0 mt-12 mr-5 sm:mr-10 bg-white p-2 rounded-lg absolute z-50 shadow-sm">
+        <div class="flex flex-col right-0 mt-12 mr-5 sm:mr-10 bg-white p-2 rounded-lg absolute z-50 shadow-md">
           <div class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded-lg">
             <ion-icon name="person-outline" size="small" class="align-middle"></ion-icon>
             <span class="px-3 align-middle text-xs">Account</span>
@@ -42,6 +51,56 @@
         </div>
       </div>
       <!-- end header -->
+
+      <!-- search & filter -->
+      <div class="flex flex-col left-0 px-5 sm:left-auto sm:px-3 sm:flex-row transform -translate-y-3 sm:translate-y-3 absolute">
+        <!-- search -->
+        <div class="bg-white px-4 rounded-lg py-5 shadow-sm">
+          <div class="sm:mb-0">
+            <select class="w-full sm:w-auto mb-3 sm:mb-0 px-3 py-3 pr-4 mr-3 bg-gray-200 text-gray-800 focus:shadow-none focus:border-blue-600 text-sm rounded-lg border border-gray-300">
+              <option>Name</option>
+              <option>NRC</option>
+              <option>Phone</option>
+            </select>
+            <input class="w-full sm:w-auto mb-3 sm:mb-0 p-2 mr-3 border rounded-lg bg-gray-200" type="text" name="search" id="search" placeholder="Search...">
+            <button class="w-full sm:w-auto bg-indigo-500 bottom-0 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg">
+              <ion-icon name="search-outline" class="align-text-top" size="small"></ion-icon> Search
+            </button>
+          </div>
+        </div>
+        <!-- end search -->
+
+        <!-- filter -->
+        <div class="bg-white mt-3 sm:mt-0 rounded-lg px-4 py-5 shadow-sm relative sm:ml-3">
+          <button class="w-full bg-indigo-500 bottom-0 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg">
+            <ion-icon name="filter-outline" class="align-text-top" size="small"></ion-icon> Filter/Sort
+          </button>
+
+          <div class="bg-white w-full rounded-lg shadow-md z-50 right-0 mt-8 absolute">
+            <div class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700">
+              <input class="pl-5 inline-block cursor-pointer" type="radio" name="filter" id="this-week" checked="checked">
+              <label for="this-week" class="ml-2 text-gray-800">This Week</label>
+            </div>
+            <div class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700">
+              <input class="pl-5 inline-block cursor-pointer" type="radio" name="filter" id="this-month">
+              <label for="this-month" class="ml-2 text-gray-800">This Month</label>
+            </div>
+            <hr>
+            <div class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700">
+              <input class="pl-5 inline-block cursor-pointer" type="radio" name="sort" id="date-asc" checked="checked">
+              <label for="date-asc" class="ml-2 text-gray-800">Last Registered</label>
+            </div>
+            <div class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700">
+              <input class="pl-5 inline-block cursor-pointer" type="radio" name="sort" id="date-desc">
+              <label for="date-desc" class="ml-2 text-gray-800">First Registered</label>
+            </div>
+          </div>
+        </div>
+        <!-- end filter -->
+      </div>
+      <!-- end search & filter -->
+
+
     </div>
 
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
