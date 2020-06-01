@@ -20,7 +20,7 @@
   <body class="bg-gray-200">
     <div class="w-full">
       <div class="bg-indigo-500">
-        <div class="container mx-auto p-5 sm:p-10">
+        <div class="container mx-auto p-5 sm:p-8">
           <!-- header -->
           <div class="flex align-middle py-5 sm:py-0 relative">
             <!-- logo -->
@@ -97,200 +97,643 @@
         <!-- end container -->
       </div>
 
-      <div class="container mx-auto px-5 sm:px-10 transform -translate-y-3 sm:-translate-y-5">
-        <!-- search & filter -->
-        <div
-        class="flex flex-col sm:flex-row"
+      <div
+        class="container mx-auto px-5 sm:px-10 transform -translate-y-3 sm:-translate-y-5"
       >
-        <!-- search -->
-        <div class="bg-white px-4 rounded-lg py-5 shadow-sm">
-          <div class="sm:mb-0">
-            <select
-              class="w-full sm:w-auto mb-3 sm:mb-0 px-3 py-3 pr-4 mr-3 bg-gray-200 text-gray-800 focus:shadow-none focus:border-blue-600 text-sm rounded-lg border border-gray-300 focus:outline-none focus:shadow-outline"
-            >
-              <option>Name</option>
-              <option>NRC</option>
-              <option>Phone</option>
-            </select>
-            <input
-              class="w-full sm:w-auto mb-3 sm:mb-0 p-2 mr-3 border rounded-lg bg-gray-200 focus:outline-none focus:shadow-outline"
-              type="text"
-              name="search"
-              id="search"
-              placeholder="Search..."
-            />
+        <!-- search & filter -->
+        <div class="flex flex-col sm:flex-row">
+          <!-- search -->
+          <div class="bg-white px-4 rounded-lg py-5 shadow-sm">
+            <div class="sm:mb-0">
+              <select
+                class="w-full sm:w-auto mb-3 sm:mb-0 px-3 py-3 pr-4 mr-3 bg-gray-200 text-gray-800 focus:shadow-none focus:border-blue-600 text-sm rounded-lg border border-gray-300 focus:outline-none focus:shadow-outline"
+              >
+                <option>Name</option>
+                <option>NRC</option>
+                <option>Phone</option>
+              </select>
+              <input
+                class="w-full sm:w-auto mb-3 sm:mb-0 p-2 mr-3 border rounded-lg bg-gray-200 focus:outline-none focus:shadow-outline"
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Search..."
+              />
+              <button
+                class="w-full sm:w-auto bg-indigo-500 bottom-0 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline"
+              >
+                <ion-icon
+                  name="search-outline"
+                  class="align-text-top"
+                  size="small"
+                ></ion-icon>
+                Search
+              </button>
+            </div>
+          </div>
+          <!-- end search -->
+
+          <!-- filter -->
+          <div
+            class="bg-white mt-3 sm:mt-0 rounded-lg px-4 py-5 shadow-sm relative sm:ml-3"
+          >
             <button
-              class="w-full sm:w-auto bg-indigo-500 bottom-0 hover:bg-blue-700 text-white py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline"
+              class="w-full bg-indigo-500 bottom-0 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline"
+              id="btnFilterSort"
             >
               <ion-icon
-                name="search-outline"
+                name="filter-outline"
                 class="align-text-top"
                 size="small"
               ></ion-icon>
-              Search
+              Filter / Sort
             </button>
-          </div>
-        </div>
-        <!-- end search -->
 
-        <!-- filter -->
-        <div
-          class="bg-white mt-3 sm:mt-0 rounded-lg px-4 py-5 shadow-sm relative sm:ml-3"
-        >
-          <button
-            class="w-full bg-indigo-500 bottom-0 hover:bg-blue-700 text-white py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline"
-            id="btnFilterSort"
-          >
-            <ion-icon
-              name="filter-outline"
-              class="align-text-top"
-              size="small"
-            ></ion-icon>
-            Filter / Sort
-          </button>
+            <div class="divFilterSort hidden">
+              <div
+                class="bg-white w-full rounded-lg shadow-md z-50 right-0 mt-8 absolute border"
+              >
+                <div
+                  class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
+                >
+                  <input
+                    class="pl-5 inline-block cursor-pointer"
+                    type="radio"
+                    name="mail-filter"
+                    id="mail-all"
+                    checked="checked"
+                  />
+                  <label for="mail-all" class="ml-2 text-gray-800 text-sm"
+                    >All</label
+                  >
+                </div>
+                <div
+                  class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
+                >
+                  <input
+                    class="pl-5 inline-block cursor-pointer"
+                    type="radio"
+                    name="mail-filter"
+                    id="mail-to-send"
+                  />
+                  <label for="mail-to-send" class="ml-2 text-gray-800 text-sm"
+                    >Send</label
+                  >
+                </div>
+                <div
+                  class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
+                >
+                  <input
+                    class="pl-5 inline-block cursor-pointer"
+                    type="radio"
+                    name="mail-filter"
+                    id="mail-sent"
+                  />
+                  <label for="mail-sent" class="ml-2 text-gray-800 text-sm"
+                    >Sent</label
+                  >
+                </div>
+                <div
+                  class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
+                >
+                  <input
+                    class="pl-5 inline-block cursor-pointer"
+                    type="radio"
+                    name="mail-filter"
+                    id="mail-to-retry"
+                  />
+                  <label for="mail-to-retry" class="ml-2 text-gray-800 text-sm"
+                    >Retry</label
+                  >
+                </div>
+                <hr />
+                <div
+                  class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
+                >
+                  <input
+                    class="pl-5 inline-block cursor-pointer"
+                    type="radio"
+                    name="filter"
+                    id="this-week"
+                    checked="checked"
+                  />
+                  <label for="this-week" class="ml-2 text-gray-800 text-sm"
+                    >All</label
+                  >
+                </div>
+                <div
+                  class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
+                >
+                  <input
+                    class="pl-5 inline-block cursor-pointer"
+                    type="radio"
+                    name="filter"
+                    id="this-week"
+                  />
+                  <label for="this-week" class="ml-2 text-gray-800 text-sm"
+                    >This Week</label
+                  >
+                </div>
+                <div
+                  class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
+                >
+                  <input
+                    class="pl-5 inline-block cursor-pointer"
+                    type="radio"
+                    name="filter"
+                    id="this-month"
+                  />
+                  <label for="this-month" class="ml-2 text-gray-800 text-sm"
+                    >This Month</label
+                  >
+                </div>
 
-          <div class="divFilterSort hidden">
-            <div
-              class="bg-white w-full rounded-lg shadow-md z-50 right-0 mt-8 absolute"
-            >
-              <div
-                class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
-              >
-                <input
-                  class="pl-5 inline-block cursor-pointer"
-                  type="radio"
-                  name="filter"
-                  id="this-week"
-                  checked="checked"
-                />
-                <label for="this-week" class="ml-2 text-gray-800 text-sm"
-                  >This Week</label
+                <hr />
+
+                <div
+                  class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
                 >
-              </div>
-              <div
-                class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
-              >
-                <input
-                  class="pl-5 inline-block cursor-pointer"
-                  type="radio"
-                  name="filter"
-                  id="this-month"
-                />
-                <label for="this-month" class="ml-2 text-gray-800 text-sm"
-                  >This Month</label
+                  <input
+                    class="pl-5 inline-block cursor-pointer"
+                    type="radio"
+                    name="sort"
+                    id="date-asc"
+                    checked="checked"
+                  />
+                  <label for="date-asc" class="ml-2 text-gray-800 text-sm"
+                    >Last Registered</label
+                  >
+                </div>
+                <div
+                  class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
                 >
-              </div>
-              <hr />
-              <div
-                class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
-              >
-                <input
-                  class="pl-5 inline-block cursor-pointer"
-                  type="radio"
-                  name="sort"
-                  id="date-asc"
-                  checked="checked"
-                />
-                <label for="date-asc" class="ml-2 text-gray-800 text-sm"
-                  >Last Registered</label
-                >
-              </div>
-              <div
-                class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
-              >
-                <input
-                  class="pl-5 inline-block cursor-pointer"
-                  type="radio"
-                  name="sort"
-                  id="date-desc"
-                />
-                <label for="date-desc" class="ml-2 text-gray-800 text-sm"
-                  >First Registered</label
-                >
+                  <input
+                    class="pl-5 inline-block cursor-pointer"
+                    type="radio"
+                    name="sort"
+                    id="date-desc"
+                  />
+                  <label for="date-desc" class="ml-2 text-gray-800 text-sm"
+                    >First Registered</label
+                  >
+                </div>
               </div>
             </div>
           </div>
+          <!-- end filter -->
         </div>
-        <!-- end filter -->
-      </div>
-      <!-- end search & filter -->
+        <!-- end search & filter -->
       </div>
 
-      <div class="container mx-auto px-5 sm:px-10 overflow-x-auto">
+      <div class="container mx-auto px-5 sm:px-10 overflow-x-auto pb-5">
         <!-- table -->
-        <table class="table-auto w-full bg-white shadow-sm rounded-lg">
-          <div
-            class="flex bg-white rounded-tl-lg rounded-tr-lg px-4 py-4 text-sm text-gray-700 shadow-sm"
-          >
-            <span class="flex-auto">Patient Registeration Records</span>
-            <span>Total - 200</span>
+        <div
+          class="bg-white block flex px-6 py-3 justify-between rounded-tl-lg rounded-tr-lg"
+        >
+          <span class="text-gray-600 text-sm">Patient Registerations</span>
+          <span class="text-gray-600 text-sm">Total - 200</span>
+        </div>
+
+        <div class="bg-white block w-full md:table">
+          <!-- table header -->
+          <div class="hidden md:table-row w-full">
+            <div
+              class="block md:table-cell border-b px-6 py-3 text-sm font-semibold tracking-wider text-gray-700"
+            >
+              No
+            </div>
+            <div
+              class="block md:table-cell border-b px-6 py-3 text-sm font-semibold tracking-wider text-gray-700"
+            >
+              Name
+            </div>
+            <div
+              class="block md:table-cell border-b px-6 py-3 text-sm font-semibold tracking-wider text-gray-700"
+            >
+              NRC
+            </div>
+            <div
+              class="block md:table-cell border-b px-6 py-3 text-sm font-semibold tracking-wider text-gray-700"
+            >
+              Visiting Date
+            </div>
+            <div
+              class="block md:table-cell border-b px-6 py-3 text-sm font-semibold tracking-wider text-gray-700"
+            >
+              Phone
+            </div>
+            <div
+              class="block md:table-cell border-b px-6 py-3 text-sm font-semibold tracking-wider text-gray-700"
+            >
+              Status
+            </div>
+            <div
+              class="block md:table-cell border-b px-6 py-3 text-sm font-semibold tracking-wider text-gray-700"
+            >
+              <!-- ... -->
+            </div>
           </div>
-          <thead class="bg-white">
-            <tr>
-              <th class="w-auto px-4 py-2 border-b text-left text-gray-700 text-sm uppercase tracking-wider">No</th>
-              <th class="w-auto px-4 py-2 border-b text-left text-gray-700 text-sm uppercase tracking-wider">Name</th>
-              <th class="w-auto px-4 py-2 border-b text-left text-gray-700 text-sm uppercase tracking-wider">NRC</th>
-              <th class="w-auto px-4 py-2 border-b text-left text-gray-700 text-sm uppercase tracking-wider">Visiting Date</th>
-              <th class="w-auto px-4 py-2 border-b text-left text-gray-700 text-sm uppercase tracking-wider">Phone</th>
-              <th class="w-auto px-4 py-2 border-b text-left text-gray-700 text-sm uppercase tracking-wider">Status</th>
-              <th class="w-auto px-4 py-2 border-b text-left text-gray-700 text-sm uppercase tracking-wider"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="border-b px-4 py-2">200</td>
-              <td class="border-b px-4 py-2">U Ba Myint</td>
-              <td class="border-b px-4 py-2">1/MaMaMa(N) 123456</td>
-              <td class="border-b px-4 py-2">2020-12-12</td>
-              <td class="border-b px-4 py-2">09123456789</td>
-              <td class="border-b px-4 py-2">
-                <button
-                  class="bg-blue-500 text-sm hover:bg-blue-700 text-white font-bold py-1 px-3 rounded-full"
-                >
-                  Send
-                </button>
-              </td>
-              <td class="border-b px-4 py-2">
+          <!-- end table header -->
+
+          <!-- table body -->
+          <!-- 1st row -->
+          <div class="block md:table-row md:static border-b py-3">
+            <div
+              class="block flex md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              <span class="flex-auto text-indigo-500">#200</span>
+
+              <div class="inline md:hidden py-1 text-sm text-gray-700">
                 <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-              </td>
-            </tr>
-            <tr>
-              <td class="border-b px-4 py-2">199</td>
-              <td class="border-b px-4 py-2">U John Aung</td>
-              <td class="border-b px-4 py-2">1/MaMaMa(N) 123456</td>
-              <td class="border-b px-4 py-2">2020-12-12</td>
-              <td class="border-b px-4 py-2">09123456789</td>
-              <td class="border-b px-4 py-2">
-                <button
-                  class="bg-blue-500 text-sm hover:bg-blue-700 text-white font-bold py-1 px-3 rounded-full"
+              </div>
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              U Myint Maung
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              1/MaMaNa(N) 123456
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              2020-12-12
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              09123456789
+            </div>
+            <div
+              class="hidden block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              <button
+                class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded-full"
+              >
+                Send
+              </button>
+            </div>
+
+            <div
+              class="hidden block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              <div class="relative hidden md:inline-block">
+                <a class="inline-flex w-8 h-8 items-center justify-center cursor-pointer hover:bg-indigo-100 rounded-full">
+                  <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                </a>
+                <div
+                  class="absolute w-40 right-0 bg-white p-2 rounded-lg z-20 shadow-md border"
                 >
-                  Send
-                </button>
-              </td>
-              <td class="border-b px-4 py-2">
+                  <div
+                    class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-orange-100 hover:text-orange-500 rounded-lg"
+                  >
+                    <ion-icon
+                      name="create-outline"
+                      class="align-middle"
+                      size="small"
+                    ></ion-icon>
+                    <span class="px-3 align-middle text-xs">Edit</span>
+                  </div>
+                  <div
+                    class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-red-100 hover:text-red-500 rounded-lg"
+                  >
+                    <ion-icon
+                      name="trash-outline"
+                      class="align-middle"
+                      size="small"
+                    ></ion-icon>
+                    <span class="px-3 align-middle text-xs">Delete</span>
+                  </div>
+                  <div
+                    class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-green-100 hover:text-green-500 rounded-lg"
+                  >
+                    <ion-icon
+                      name="document-text-outline"
+                      class="align-middle"
+                      size="small"
+                    ></ion-icon>
+                    <span class="px-3 align-middle text-xs">View PDF</span>
+                  </div>
+                  <div
+                    class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded-lg"
+                  >
+                    <ion-icon
+                      name="trending-up-outline"
+                      class="align-middle"
+                      size="small"
+                    ></ion-icon>
+                    <span class="px-3 align-middle text-xs">View More</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end 1st row -->
+
+          <!-- 2nd row -->
+          <div class="block md:table-row md:static border-b py-3">
+            <div
+              class="block flex md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              <span class="flex-auto text-indigo-500">#199</span>
+
+              <div class="inline md:hidden py-1 text-sm text-gray-700">
                 <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-              </td>
-            </tr>
-            <tr>
-              <td class="border-b px-4 py-2">198</td>
-              <td class="border-b px-4 py-2">U Ba Myint</td>
-              <td class="border-b px-4 py-2">1/MaMaMa(N) 123456</td>
-              <td class="border-b px-4 py-2">2020-12-12</td>
-              <td class="border-b px-4 py-2">09123456789</td>
-              <td class="border-b px-4 py-2">
-                <button
-                  class="bg-blue-500 text-sm hover:bg-blue-700 text-white font-bold py-1 px-3 rounded-full"
-                >
-                  Send
-                </button>
-              </td>
-              <td class="border-b px-4 py-2">
+              </div>
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              U Aye Aung
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              1/MaMaNa(N) 123456
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              2020-12-12
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              09123456789
+            </div>
+            <div
+              class="hidden block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              <button
+                class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-1 px-2 rounded-full"
+              >
+                Send
+              </button>
+            </div>
+
+            <div
+              class="hidden block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              <a class="inline-flex w-8 h-8 items-center justify-center">
                 <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+              </a>
+            </div>
+          </div>
+          <!-- end 2nd row -->
+
+          <!-- 3rd row -->
+          <div class="block md:table-row md:static border-b py-3">
+            <div
+              class="block flex md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              <span class="flex-auto text-indigo-500">#198</span>
+
+              <div class="inline md:hidden py-1 text-sm text-gray-700">
+                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+              </div>
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              U Khan Maung
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              1/MaMaNa(N) 123456
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              2020-12-12
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              09123456789
+            </div>
+            <div
+              class="hidden block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              <span
+                class="bg-green-100 text-green-500 font-bold py-2 px-2 rounded-full disable"
+              >
+                Sent
+              </span>
+            </div>
+
+            <div
+              class="hidden block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              <a class="inline-flex w-8 h-8 items-center justify-center">
+                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+              </a>
+            </div>
+          </div>
+          <!-- end 3rd row -->
+
+          <!-- 4th row -->
+          <div class="block md:table-row md:static border-b py-3">
+            <div
+              class="block flex md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              <span class="flex-auto text-indigo-500">#197</span>
+
+              <div class="inline md:hidden py-1 text-sm text-gray-700">
+                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+              </div>
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              U Aye Aung
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              1/MaMaNa(N) 123456
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              2020-12-12
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              09123456789
+            </div>
+            <div
+              class="hidden block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              <span
+                class="bg-green-100 text-green-500 font-bold py-2 px-2 rounded-full disable"
+              >
+                Sent
+              </span>
+            </div>
+
+            <div
+              class="hidden block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              <a class="inline-flex w-8 h-8 items-center justify-center">
+                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+              </a>
+            </div>
+          </div>
+          <!-- end 4th row -->
+
+          <!-- 5th row -->
+          <div class="block md:table-row md:static border-b py-3">
+            <div
+              class="block flex md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              <span class="flex-auto text-indigo-500">#196</span>
+
+              <div class="inline md:hidden py-1 text-sm text-gray-700">
+                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+              </div>
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              U Aye Aung
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              1/MaMaNa(N) 123456
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              2020-12-12
+            </div>
+            <div
+              class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              09123456789
+            </div>
+            <div
+              class="hidden block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              <button
+                class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-1 px-2 rounded-full"
+              >
+                Retry
+              </button>
+            </div>
+
+            <div
+              class="hidden block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+            >
+              <a class="inline-flex w-8 h-8 items-center justify-center">
+                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+              </a>
+            </div>
+          </div>
+          <!-- end 5th row -->
+
+          <!-- end table body -->
+        </div>
         <!-- end table -->
+
+        <div
+          class="bg-white block flex px-6 py-4 justify-between rounded-bl-lg rounded-br-lg"
+        >
+          <!-- <span class="text-gray-600 text-sm">Patient Registerations</span>
+          <span class="text-gray-600 text-sm">Total - 200</span> -->
+
+          <div
+            class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between"
+          >
+            <div>
+              <p class="text-sm leading-5 text-gray-700">
+                Showing
+                <span class="font-medium">1</span>
+                to
+                <span class="font-medium">10</span>
+                of
+                <span class="font-medium">97</span>
+                results
+              </p>
+            </div>
+            <div>
+              <nav class="relative z-0 inline-flex shadow-sm">
+                <button
+                  type="button"
+                  class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150"
+                  aria-label="Previous"
+                >
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                >
+                  1
+                </button>
+                <button
+                  type="button"
+                  class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                >
+                  2
+                </button>
+                <button
+                  type="button"
+                  class="hidden md:inline-flex -ml-px relative items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                >
+                  3
+                </button>
+                <span
+                  class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700"
+                >
+                  ...
+                </span>
+                <button
+                  type="button"
+                  class="hidden md:inline-flex -ml-px relative items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                >
+                  8
+                </button>
+                <button
+                  type="button"
+                  class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                >
+                  9
+                </button>
+                <button
+                  type="button"
+                  class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150"
+                >
+                  10
+                </button>
+                <button
+                  type="button"
+                  class="-ml-px relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150"
+                  aria-label="Next"
+                >
+                  <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </nav>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
