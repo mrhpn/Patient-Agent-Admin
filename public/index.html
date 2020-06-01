@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Patient Agent | Admin</title>
-  <link rel="icon" href="/img/logo.svg">
-  <link rel="stylesheet" href="/build/tailwind.css" />
-  <!-- <style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Agent | Admin</title>
+    <link rel="icon" href="/img/logo.svg" />
+    <link rel="stylesheet" href="/build/tailwind.css" />
+    <!-- <style>
       @font-face {
         font-family: 'font-product-san';
         src: url('/fonts/Product-Sans-Regular.ttf');
@@ -16,95 +15,198 @@
         font-family: font-product-san;
       }
     </style> -->
-</head>
+  </head>
 
-<body class="bg-gray-200">
-  <div class="w-full bg-indigo-500">
-    <div class="container mx-auto p-5 sm:p-10">
-
-      <!-- header -->
-      <div class="flex align-middle py-5 sm:py-0 relative">
-        <!-- logo -->
-        <div class="flex-grow flex flex-row items-center p-0">
-          <img class="w-12 sm:w-16 inline mr-2" src="/img/logo.svg" alt="Leaf logo">
-          <div class="flex flex-col">
-            <h1 class="text-xl font-bold text-white uppercase tracking-wider">
-              Administrator
-            </h1>
-            <hr class="w-auto hidden sm:inline" />
-            <h3 class="text-sm italic text-gray-300">Patient Booking System</h3>
-          </div>
-        </div>
-        <!-- end logo -->
-
-        <!-- avatar -->
-        <div class="w-10 h-10 mb-4">
-          <div class="group w-full h-full rounded-full overflow-hidden shadow-inner text-center bg-purple table cursor-pointer" id="btnAvatar">
-            <span class="hidden group-hover:table-cell text-white font-bold align-middle">KR</span>
-            <img src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png" alt="lovely avatar" class="object-cover object-center w-full h-full visible group-hover:hidden" />
-          </div>
-        </div>
-        <!-- end avatar -->
-
-        <!-- account & logout -->
-        <div class="divAccountLogout hidden">
-          <div class="right-0 mt-12 bg-white p-2 rounded-lg absolute z-50 shadow-md">
-            <div class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded-lg">
-              <ion-icon name="person-outline" size="small" class="align-middle"></ion-icon>
-              <span class="px-3 align-middle text-xs">Account</span>
+  <body class="bg-gray-200">
+    <div class="w-full">
+      <div class="bg-indigo-500">
+        <div class="container mx-auto p-5 sm:p-10">
+          <!-- header -->
+          <div class="flex align-middle py-5 sm:py-0 relative">
+            <!-- logo -->
+            <div class="flex-grow flex flex-row items-center p-0">
+              <img
+                class="w-12 sm:w-16 inline mr-2"
+                src="/img/logo.svg"
+                alt="Leaf logo"
+              />
+              <div class="flex flex-col">
+                <h1
+                  class="text-xl font-bold text-white uppercase tracking-wider"
+                >
+                  Administrator
+                </h1>
+                <hr class="w-auto hidden sm:inline" />
+                <h3 class="text-sm italic text-gray-300">
+                  Patient Booking System
+                </h3>
+              </div>
             </div>
-            <div class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded-lg">
-              <ion-icon name="log-out-outline" size="small" class="align-middle"></ion-icon>
-              <span class="px-3 align-middle text-xs"> Logout</span>
+            <!-- end logo -->
+
+            <!-- avatar -->
+            <div class="w-10 h-10 mb-4">
+              <div
+                class="group w-full h-full rounded-full overflow-hidden shadow-inner text-center bg-purple table cursor-pointer"
+                id="btnAvatar"
+              >
+                <span
+                  class="hidden group-hover:table-cell text-white font-bold align-middle"
+                  >KR</span
+                >
+                <img
+                  src="https://pickaface.net/gallery/avatar/unr_random_180410_1905_z1exb.png"
+                  alt="lovely avatar"
+                  class="object-cover object-center w-full h-full visible group-hover:hidden"
+                />
+              </div>
             </div>
+            <!-- end avatar -->
+
+            <!-- account & logout -->
+            <div class="divAccountLogout hidden">
+              <div
+                class="right-0 mt-12 bg-white p-2 rounded-lg absolute z-50 shadow-md"
+              >
+                <div
+                  class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded-lg"
+                >
+                  <ion-icon
+                    name="person-outline"
+                    size="small"
+                    class="align-middle"
+                  ></ion-icon>
+                  <span class="px-3 align-middle text-xs">Account</span>
+                </div>
+                <div
+                  class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded-lg"
+                >
+                  <ion-icon
+                    name="log-out-outline"
+                    size="small"
+                    class="align-middle"
+                  ></ion-icon>
+                  <span class="px-3 align-middle text-xs"> Logout</span>
+                </div>
+              </div>
+            </div>
+            <!-- end account & logout -->
           </div>
+          <!-- end header -->
         </div>
-        <!-- end account & logout -->
+        <!-- end container -->
       </div>
-      <!-- end header -->
 
-      <!-- search & filter -->
-      <div class="flex flex-col left-0 px-5 sm:left-auto sm:px-3 sm:flex-row transform -translate-y-3 sm:translate-y-3 absolute">
+      <div class="container mx-auto px-5 sm:px-10 transform -translate-y-3 sm:-translate-y-5">
+        <!-- search & filter -->
+        <div
+        class="flex flex-col sm:flex-row"
+      >
         <!-- search -->
         <div class="bg-white px-4 rounded-lg py-5 shadow-sm">
           <div class="sm:mb-0">
-            <select class="w-full sm:w-auto mb-3 sm:mb-0 px-3 py-3 pr-4 mr-3 bg-gray-200 text-gray-800 focus:shadow-none focus:border-blue-600 text-sm rounded-lg border border-gray-300 focus:outline-none focus:shadow-outline">
+            <select
+              class="w-full sm:w-auto mb-3 sm:mb-0 px-3 py-3 pr-4 mr-3 bg-gray-200 text-gray-800 focus:shadow-none focus:border-blue-600 text-sm rounded-lg border border-gray-300 focus:outline-none focus:shadow-outline"
+            >
               <option>Name</option>
               <option>NRC</option>
               <option>Phone</option>
             </select>
-            <input class="w-full sm:w-auto mb-3 sm:mb-0 p-2 mr-3 border rounded-lg bg-gray-200 focus:outline-none focus:shadow-outline" type="text" name="search" id="search" placeholder="Search...">
-            <button class="w-full sm:w-auto bg-indigo-500 bottom-0 hover:bg-blue-700 text-white py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">
-              <ion-icon name="search-outline" class="align-text-top" size="small"></ion-icon> Search
+            <input
+              class="w-full sm:w-auto mb-3 sm:mb-0 p-2 mr-3 border rounded-lg bg-gray-200 focus:outline-none focus:shadow-outline"
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search..."
+            />
+            <button
+              class="w-full sm:w-auto bg-indigo-500 bottom-0 hover:bg-blue-700 text-white py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline"
+            >
+              <ion-icon
+                name="search-outline"
+                class="align-text-top"
+                size="small"
+              ></ion-icon>
+              Search
             </button>
           </div>
         </div>
         <!-- end search -->
 
         <!-- filter -->
-        <div class="bg-white mt-3 sm:mt-0 rounded-lg px-4 py-5 shadow-sm relative sm:ml-3">
-          <button class="w-full bg-indigo-500 bottom-0 hover:bg-blue-700 text-white py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline" id="btnFilterSort">
-            <ion-icon name="filter-outline" class="align-text-top" size="small"></ion-icon> Filter / Sort
+        <div
+          class="bg-white mt-3 sm:mt-0 rounded-lg px-4 py-5 shadow-sm relative sm:ml-3"
+        >
+          <button
+            class="w-full bg-indigo-500 bottom-0 hover:bg-blue-700 text-white py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline"
+            id="btnFilterSort"
+          >
+            <ion-icon
+              name="filter-outline"
+              class="align-text-top"
+              size="small"
+            ></ion-icon>
+            Filter / Sort
           </button>
 
           <div class="divFilterSort hidden">
-            <div class="bg-white w-full rounded-lg shadow-md z-50 right-0 mt-8 absolute">
-              <div class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700">
-                <input class="pl-5 inline-block cursor-pointer" type="radio" name="filter" id="this-week" checked="checked">
-                <label for="this-week" class="ml-2 text-gray-800 text-sm">This Week</label>
+            <div
+              class="bg-white w-full rounded-lg shadow-md z-50 right-0 mt-8 absolute"
+            >
+              <div
+                class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
+              >
+                <input
+                  class="pl-5 inline-block cursor-pointer"
+                  type="radio"
+                  name="filter"
+                  id="this-week"
+                  checked="checked"
+                />
+                <label for="this-week" class="ml-2 text-gray-800 text-sm"
+                  >This Week</label
+                >
               </div>
-              <div class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700">
-                <input class="pl-5 inline-block cursor-pointer" type="radio" name="filter" id="this-month">
-                <label for="this-month" class="ml-2 text-gray-800 text-sm">This Month</label>
+              <div
+                class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
+              >
+                <input
+                  class="pl-5 inline-block cursor-pointer"
+                  type="radio"
+                  name="filter"
+                  id="this-month"
+                />
+                <label for="this-month" class="ml-2 text-gray-800 text-sm"
+                  >This Month</label
+                >
               </div>
-              <hr>
-              <div class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700">
-                <input class="pl-5 inline-block cursor-pointer" type="radio" name="sort" id="date-asc" checked="checked">
-                <label for="date-asc" class="ml-2 text-gray-800 text-sm">Last Registered</label>
+              <hr />
+              <div
+                class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
+              >
+                <input
+                  class="pl-5 inline-block cursor-pointer"
+                  type="radio"
+                  name="sort"
+                  id="date-asc"
+                  checked="checked"
+                />
+                <label for="date-asc" class="ml-2 text-gray-800 text-sm"
+                  >Last Registered</label
+                >
               </div>
-              <div class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700">
-                <input class="pl-5 inline-block cursor-pointer" type="radio" name="sort" id="date-desc">
-                <label for="date-desc" class="ml-2 text-gray-800 text-sm">First Registered</label>
+              <div
+                class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
+              >
+                <input
+                  class="pl-5 inline-block cursor-pointer"
+                  type="radio"
+                  name="sort"
+                  id="date-desc"
+                />
+                <label for="date-desc" class="ml-2 text-gray-800 text-sm"
+                  >First Registered</label
+                >
               </div>
             </div>
           </div>
@@ -112,29 +214,105 @@
         <!-- end filter -->
       </div>
       <!-- end search & filter -->
+      </div>
+
+      <div class="container mx-auto px-5 sm:px-10 overflow-x-auto">
+        <!-- table -->
+        <table class="table-auto w-full bg-white shadow-sm rounded-lg">
+          <div
+            class="flex bg-white rounded-tl-lg rounded-tr-lg px-4 py-4 text-sm text-gray-700 shadow-sm"
+          >
+            <span class="flex-auto">Patient Registeration Records</span>
+            <span>Total - 200</span>
+          </div>
+          <thead class="bg-white">
+            <tr>
+              <th class="w-auto px-4 py-2 border-b text-left text-gray-700 text-sm uppercase tracking-wider">No</th>
+              <th class="w-auto px-4 py-2 border-b text-left text-gray-700 text-sm uppercase tracking-wider">Name</th>
+              <th class="w-auto px-4 py-2 border-b text-left text-gray-700 text-sm uppercase tracking-wider">NRC</th>
+              <th class="w-auto px-4 py-2 border-b text-left text-gray-700 text-sm uppercase tracking-wider">Visiting Date</th>
+              <th class="w-auto px-4 py-2 border-b text-left text-gray-700 text-sm uppercase tracking-wider">Phone</th>
+              <th class="w-auto px-4 py-2 border-b text-left text-gray-700 text-sm uppercase tracking-wider">Status</th>
+              <th class="w-auto px-4 py-2 border-b text-left text-gray-700 text-sm uppercase tracking-wider"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border-b px-4 py-2">200</td>
+              <td class="border-b px-4 py-2">U Ba Myint</td>
+              <td class="border-b px-4 py-2">1/MaMaMa(N) 123456</td>
+              <td class="border-b px-4 py-2">2020-12-12</td>
+              <td class="border-b px-4 py-2">09123456789</td>
+              <td class="border-b px-4 py-2">
+                <button
+                  class="bg-blue-500 text-sm hover:bg-blue-700 text-white font-bold py-1 px-3 rounded-full"
+                >
+                  Send
+                </button>
+              </td>
+              <td class="border-b px-4 py-2">
+                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+              </td>
+            </tr>
+            <tr>
+              <td class="border-b px-4 py-2">199</td>
+              <td class="border-b px-4 py-2">U John Aung</td>
+              <td class="border-b px-4 py-2">1/MaMaMa(N) 123456</td>
+              <td class="border-b px-4 py-2">2020-12-12</td>
+              <td class="border-b px-4 py-2">09123456789</td>
+              <td class="border-b px-4 py-2">
+                <button
+                  class="bg-blue-500 text-sm hover:bg-blue-700 text-white font-bold py-1 px-3 rounded-full"
+                >
+                  Send
+                </button>
+              </td>
+              <td class="border-b px-4 py-2">
+                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+              </td>
+            </tr>
+            <tr>
+              <td class="border-b px-4 py-2">198</td>
+              <td class="border-b px-4 py-2">U Ba Myint</td>
+              <td class="border-b px-4 py-2">1/MaMaMa(N) 123456</td>
+              <td class="border-b px-4 py-2">2020-12-12</td>
+              <td class="border-b px-4 py-2">09123456789</td>
+              <td class="border-b px-4 py-2">
+                <button
+                  class="bg-blue-500 text-sm hover:bg-blue-700 text-white font-bold py-1 px-3 rounded-full"
+                >
+                  Send
+                </button>
+              </td>
+              <td class="border-b px-4 py-2">
+                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- end table -->
+      </div>
     </div>
-  </div>
 
-  <script>
-    const btnAvatar = document.querySelector('#btnAvatar');
-    const btnFilterSort = document.querySelector('#btnFilterSort');
+    <script>
+      const btnAvatar = document.querySelector("#btnAvatar");
+      const btnFilterSort = document.querySelector("#btnFilterSort");
 
-    const divAccountLogout = document.querySelector('.divAccountLogout');
-    const divFilterSort = document.querySelector('.divFilterSort');
+      const divAccountLogout = document.querySelector(".divAccountLogout");
+      const divFilterSort = document.querySelector(".divFilterSort");
 
-    btnAvatar.addEventListener('click', function () {
-      if (divAccountLogout.classList.contains('hidden'))
-        return divAccountLogout.classList.remove('hidden');
-      return divAccountLogout.classList.add('hidden');
-    });
+      btnAvatar.addEventListener("click", function () {
+        if (divAccountLogout.classList.contains("hidden"))
+          return divAccountLogout.classList.remove("hidden");
+        return divAccountLogout.classList.add("hidden");
+      });
 
-    btnFilterSort.addEventListener('click', function () {
-      if (divFilterSort.classList.contains('hidden'))
-        return divFilterSort.classList.remove('hidden');
-      return divFilterSort.classList.add('hidden');
-    });
-  </script>
-  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-</body>
-
+      btnFilterSort.addEventListener("click", function () {
+        if (divFilterSort.classList.contains("hidden"))
+          return divFilterSort.classList.remove("hidden");
+        return divFilterSort.classList.add("hidden");
+      });
+    </script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  </body>
 </html>
