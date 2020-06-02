@@ -135,7 +135,7 @@
 
           <!-- filter -->
           <div
-            class="bg-white mt-3 sm:mt-0 rounded-lg px-4 py-5 shadow-sm relative sm:ml-3"
+            class="relative bg-white mt-3 sm:mt-0 rounded-lg px-4 py-5 shadow-sm sm:ml-3"
           >
             <button
               class="w-full bg-indigo-500 bottom-0 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline"
@@ -151,7 +151,7 @@
 
             <div class="divFilterSort hidden">
               <div
-                class="bg-white w-full rounded-lg shadow-md z-50 right-0 mt-8 absolute border"
+                class="bg-white w-full rounded-lg shadow-md mt-3 md:absolute md:mt-8 right-0 border z-50"
               >
                 <div
                   class="px-3 py-2 hover:bg-indigo-100 cursor-pointer hover:text-indigo-700"
@@ -163,7 +163,9 @@
                     id="mail-all"
                     checked="checked"
                   />
-                  <label for="mail-all" class="ml-2 text-gray-800 text-sm"
+                  <label
+                    for="mail-all"
+                    class="ml-2 text-gray-800 text-xs md:text-sm"
                     >All</label
                   >
                 </div>
@@ -176,7 +178,9 @@
                     name="mail-filter"
                     id="mail-to-send"
                   />
-                  <label for="mail-to-send" class="ml-2 text-gray-800 text-sm"
+                  <label
+                    for="mail-to-send"
+                    class="ml-2 text-gray-800 text-xs md:text-sm"
                     >Send</label
                   >
                 </div>
@@ -189,7 +193,9 @@
                     name="mail-filter"
                     id="mail-sent"
                   />
-                  <label for="mail-sent" class="ml-2 text-gray-800 text-sm"
+                  <label
+                    for="mail-sent"
+                    class="ml-2 text-gray-800 text-xs md:text-sm"
                     >Sent</label
                   >
                 </div>
@@ -202,7 +208,9 @@
                     name="mail-filter"
                     id="mail-to-retry"
                   />
-                  <label for="mail-to-retry" class="ml-2 text-gray-800 text-sm"
+                  <label
+                    for="mail-to-retry"
+                    class="ml-2 text-gray-800 text-xs md:text-sm"
                     >Retry</label
                   >
                 </div>
@@ -217,7 +225,9 @@
                     id="this-week"
                     checked="checked"
                   />
-                  <label for="this-week" class="ml-2 text-gray-800 text-sm"
+                  <label
+                    for="this-week"
+                    class="ml-2 text-gray-800 text-xs md:text-sm"
                     >All</label
                   >
                 </div>
@@ -230,7 +240,9 @@
                     name="filter"
                     id="this-week"
                   />
-                  <label for="this-week" class="ml-2 text-gray-800 text-sm"
+                  <label
+                    for="this-week"
+                    class="ml-2 text-gray-800 text-xs md:text-sm"
                     >This Week</label
                   >
                 </div>
@@ -243,7 +255,9 @@
                     name="filter"
                     id="this-month"
                   />
-                  <label for="this-month" class="ml-2 text-gray-800 text-sm"
+                  <label
+                    for="this-month"
+                    class="ml-2 text-gray-800 text-xs md:text-sm"
                     >This Month</label
                   >
                 </div>
@@ -260,7 +274,9 @@
                     id="date-asc"
                     checked="checked"
                   />
-                  <label for="date-asc" class="ml-2 text-gray-800 text-sm"
+                  <label
+                    for="date-asc"
+                    class="ml-2 text-gray-800 text-xs md:text-sm"
                     >Last Registered</label
                   >
                 </div>
@@ -273,7 +289,9 @@
                     name="sort"
                     id="date-desc"
                   />
-                  <label for="date-desc" class="ml-2 text-gray-800 text-sm"
+                  <label
+                    for="date-desc"
+                    class="ml-2 text-gray-800 text-xs md:text-sm"
                     >First Registered</label
                   >
                 </div>
@@ -285,7 +303,10 @@
         <!-- end search & filter -->
       </div>
 
-      <div class="container mx-auto px-5 sm:px-10 overflow-x-auto pb-5">
+      <div
+        class="container mx-auto px-5 sm:px-10 pb-5"
+        style="z-index: 999 !important;"
+      >
         <!-- table -->
         <div
           class="bg-white block flex px-6 py-3 justify-between rounded-tl-lg rounded-tr-lg"
@@ -339,14 +360,71 @@
           <!-- 1st row -->
           <div class="block md:table-row md:static border-b py-3">
             <div
-              class="block flex md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+              class="flex md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700 items-center"
             >
               <span class="flex-auto text-indigo-500">#200</span>
 
-              <div class="inline md:hidden py-1 text-sm text-gray-700">
-                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+              <div class="md:hidden py-1 text-sm text-gray-700 relative">
+                <a
+                  class="inline-flex w-6 h-6 items-center justify-center cursor-pointer hover:bg-indigo-100 rounded-full"
+                >
+                  <!-- <ion-icon name="ellipsis-vertical-outline"></ion-icon> -->
+                  <img
+                    src="/img/more-vertical.svg"
+                    class="w-4"
+                    alt="More Vertical Btn"
+                  />
+                </a>
+
+                <!-- more items -->
+                <div
+                  class="absolute w-40 right-0 bg-white p-2 rounded-lg shadow-md border"
+                >
+                  <div
+                    class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-orange-100 hover:text-orange-500 rounded-lg"
+                  >
+                    <ion-icon
+                      name="create-outline"
+                      class="align-middle"
+                      size="small"
+                    ></ion-icon>
+                    <span class="px-3 align-middle text-xs">Edit</span>
+                  </div>
+                  <div
+                    class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-red-100 hover:text-red-500 rounded-lg"
+                  >
+                    <ion-icon
+                      name="trash-outline"
+                      class="align-middle"
+                      size="small"
+                    ></ion-icon>
+                    <span class="px-3 align-middle text-xs">Delete</span>
+                  </div>
+                  <div
+                    class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-green-100 hover:text-green-500 rounded-lg"
+                  >
+                    <ion-icon
+                      name="document-text-outline"
+                      class="align-middle"
+                      size="small"
+                    ></ion-icon>
+                    <span class="px-3 align-middle text-xs">View PDF</span>
+                  </div>
+                  <div
+                    class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded-lg"
+                  >
+                    <ion-icon
+                      name="trending-up-outline"
+                      class="align-middle"
+                      size="small"
+                    ></ion-icon>
+                    <span class="px-3 align-middle text-xs">View More</span>
+                  </div>
+                </div>
+                <!-- end more items -->
               </div>
             </div>
+
             <div
               class="block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
             >
@@ -381,11 +459,13 @@
               class="hidden block md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
             >
               <div class="relative hidden md:inline-block">
-                <a class="inline-flex w-8 h-8 items-center justify-center cursor-pointer hover:bg-indigo-100 rounded-full">
+                <a
+                  class="inline-flex w-8 h-8 items-center justify-center cursor-pointer hover:bg-indigo-100 rounded-full"
+                >
                   <ion-icon name="ellipsis-vertical-outline"></ion-icon>
                 </a>
                 <div
-                  class="absolute w-40 right-0 bg-white p-2 rounded-lg z-20 shadow-md border"
+                  class="absolute w-40 right-0 bg-white p-2 rounded-lg z-10 shadow-md border"
                 >
                   <div
                     class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-orange-100 hover:text-orange-500 rounded-lg"
@@ -436,12 +516,21 @@
           <!-- 2nd row -->
           <div class="block md:table-row md:static border-b py-3">
             <div
-              class="block flex md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700"
+              class="flex md:table-cell md:border-b px-6 py-1 md:py-3 text-sm text-gray-700 items-center"
             >
               <span class="flex-auto text-indigo-500">#199</span>
 
               <div class="inline md:hidden py-1 text-sm text-gray-700">
-                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+                <a
+                  class="inline-flex w-6 h-6 items-center justify-center cursor-pointer hover:bg-indigo-100 rounded-full"
+                >
+                  <!-- <ion-icon name="ellipsis-vertical-outline"></ion-icon> -->
+                  <img
+                    src="/img/more-vertical.svg"
+                    class="w-4"
+                    alt="More Vertical Btn"
+                  />
+                </a>
               </div>
             </div>
             <div
@@ -642,16 +731,16 @@
         <!-- end table -->
 
         <div
-          class="bg-white block flex px-6 py-4 justify-between rounded-bl-lg rounded-br-lg"
+          class="bg-white block flex px-4 py-4 justify-between rounded-bl-lg rounded-br-lg"
         >
           <!-- <span class="text-gray-600 text-sm">Patient Registerations</span>
           <span class="text-gray-600 text-sm">Total - 200</span> -->
 
           <div
-            class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between"
+            class="sm:flex-1 sm:flex sm:items-center sm:justify-between"
           >
             <div>
-              <p class="text-sm leading-5 text-gray-700">
+              <p class="text-sm leading-5 text-gray-700 mb-2 md:mb-0">
                 Showing
                 <span class="font-medium">1</span>
                 to
