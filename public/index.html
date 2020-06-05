@@ -22,7 +22,7 @@
       <div class="bg-indigo-500">
         <div class="container mx-auto p-5 sm:p-8">
           <!-- header -->
-          <div class="flex align-middle py-5 sm:py-0 relative">
+          <div class="flex align-middle py-5 sm:py-0">
             <!-- logo -->
             <div class="flex-grow flex flex-row items-center p-0">
               <img
@@ -45,7 +45,7 @@
             <!-- end logo -->
 
             <!-- avatar -->
-            <div class="w-10 h-10 mb-4">
+            <div class="w-10 h-10 mb-4 relative">
               <div
                 class="group w-full h-full rounded-full overflow-hidden shadow-inner text-center bg-purple table cursor-pointer"
                 id="btnAvatar"
@@ -60,16 +60,13 @@
                   class="object-cover object-center w-full h-full visible group-hover:hidden"
                 />
               </div>
-            </div>
-            <!-- end avatar -->
 
-            <!-- account & logout -->
-            <div class="divAccountLogout hidden">
+              <!-- account & logout -->
               <div
-                class="right-0 mt-12 bg-white p-2 rounded-lg absolute z-50 shadow-md"
+                class="right-0 bg-white p-2 rounded-lg absolute z-50 shadow-md"
               >
                 <div
-                  class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded-lg"
+                  class="py-1 w-32 px-3 cursor-pointer text-gray-800 hover:bg-indigo-100 hover:text-indigo-700 rounded-lg"
                 >
                   <ion-icon
                     name="person-outline"
@@ -89,7 +86,14 @@
                   <span class="px-3 align-middle text-xs"> Logout</span>
                 </div>
               </div>
+              <!-- end account & logout -->
             </div>
+            <!-- end avatar -->
+
+            <!-- account & logout -->
+            <!-- <div class="divAccountLogout hidden"> -->
+
+            <!-- </div> -->
             <!-- end account & logout -->
           </div>
           <!-- end header -->
@@ -303,10 +307,7 @@
         <!-- end search & filter -->
       </div>
 
-      <div
-        class="container mx-auto px-5 sm:px-10 pb-5"
-        style="z-index: 999 !important;"
-      >
+      <div class="container mx-auto px-5 sm:px-10 pb-5">
         <!-- table -->
         <div
           class="bg-white block flex px-6 py-3 justify-between rounded-tl-lg rounded-tr-lg"
@@ -379,6 +380,7 @@
                 <!-- more items -->
                 <div
                   class="absolute w-40 right-0 bg-white p-2 rounded-lg shadow-md border"
+                  style="z-index: -999 !important;"
                 >
                   <div
                     class="py-1 px-3 cursor-pointer text-gray-800 hover:bg-orange-100 hover:text-orange-500 rounded-lg"
@@ -730,15 +732,14 @@
         </div>
         <!-- end table -->
 
+        <!-- pagination -->
         <div
           class="bg-white block flex px-4 py-4 justify-between rounded-bl-lg rounded-br-lg"
         >
           <!-- <span class="text-gray-600 text-sm">Patient Registerations</span>
           <span class="text-gray-600 text-sm">Total - 200</span> -->
 
-          <div
-            class="sm:flex-1 sm:flex sm:items-center sm:justify-between"
-          >
+          <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between">
             <div>
               <p class="text-sm leading-5 text-gray-700 mb-2 md:mb-0">
                 Showing
@@ -823,6 +824,128 @@
             </div>
           </div>
         </div>
+        <!-- end pagination -->
+
+        <!-- delete modal -->
+        <!-- <div class="fixed bottom-0 inset-x-0 px-4 pb-4 sm:inset-0 sm:flex sm:items-center sm:justify-center z-50">
+          <div class="fixed inset-0 transition-opacity">
+            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+          </div>
+
+          <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                  <svg class="h-6 w-6 text-red-600" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                  </svg>
+                </div>
+                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                  <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
+                    Delete the record
+                  </h3>
+                  <div class="mt-2">
+                    <p class="text-sm leading-5 text-gray-500">
+                      All of your data associated with the below information will be permanently removed. This action cannot be undone.
+                    </p>
+                    <span class="mt-5 block text-indigo-600">#200</span>
+                    <h6 class="text-md text-gray-800">
+                      U Myint Maung
+                      <span class="text-sm text-gray-600 block md:inline">1/MaMaNa(N) 1234567</span>
+                    </h6>
+                    <span class="text-base text-gray-700">09-123456789</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+              <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
+                <button type="button" class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+                  Delete Record
+                </button>
+              </span>
+              <span class="mt-3 flex w-full rounded-md shadow-sm sm:mt-0 sm:w-auto">
+                <button type="button" class="inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+                  Cancel
+                </button>
+              </span>
+            </div>
+          </div>
+        </div> -->
+        <!-- end delete modal -->
+
+        <!-- view more model -->
+        <!-- <div
+          class="fixed bottom-0 inset-x-0 px-4 pb-4 sm:inset-0 sm:flex sm:items-center sm:justify-center z-50"
+        >
+          <div class="fixed inset-0 transition-opacity">
+            <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+          </div>
+
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all "
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-headline"
+          >
+            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+              <div class="sm:flex sm:items-start">
+                <div
+                  class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 sm:mx-0 sm:h-10 sm:w-10"
+                >
+                  <ion-icon
+                    name="trending-up-outline"
+                    size="small"
+                    class="text-indigo-600"
+                  ></ion-icon>
+                </div>
+
+              <div class="mt-3 sm:mt-0 sm:ml-4">
+                <h3
+                  class="text-lg leading-6 font-medium text-gray-900"
+                  id="modal-headline"
+                >
+                  Details
+                </h3>
+                </div>
+              </div>
+
+              <div class="mt-3 sm:mt-0 sm:ml-4">
+                
+                <div class="flex mb-4 w-full">
+                  <div class="w-1/2 bg-gray-400 h-12">
+                    <span class="block">#200</span>
+                    <span class="block">U Myint Maung</span>
+                  </div>
+                  <div class="w-1/2 bg-gray-500 h-12"></div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse"
+            >
+              <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
+                <button
+                  type="button"
+                  class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+                >
+                  Delete Record
+                </button>
+              </span>
+              <span
+                class="mt-3 flex w-full rounded-md shadow-sm sm:mt-0 sm:w-auto"
+              >
+                <button
+                  type="button"
+                  class="inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-base leading-6 font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+                >
+                  Cancel
+                </button>
+              </span>
+            </div>
+          </div>
+        </div> -->
+        <!-- end view more model -->
       </div>
     </div>
 
